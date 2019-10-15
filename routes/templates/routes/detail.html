@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Маршрут{% endblock %}
+{% block content %}
+<h1 class="display-4 text-center my-4">Маршрут</h1>
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"># Маршрут</th>
+                    <th scope="col">Откуда</th>
+                    <th scope="col">Куда</th>
+                    <th scope="col">Поезда</th>
+                    <th scope="col">Удалять</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr> 
+                        <td>
+                            <a href="{% url 'detail' pk=object.pk%}"> 
+                                {{object.name}} 
+                            </a>
+                        </td>
+                        <td>
+                            {{object.from_city}} 
+                        </td>
+                        <td>
+                            {{object.to_city}} 
+                        </td>
+                        <td>
+                            {% for tr in object.across_cities.all %}
+                                {{tr}}<br/>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="{% url 'delete' pk=object.pk %}"> 
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    Удалить 
+                                </button>                                
+                            </a> 
+                        </td>            
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

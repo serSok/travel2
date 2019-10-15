@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Маршрут{% endblock %}
+{% block content %}
+<h1 class="display-4 text-center my-4">Маршрут</h1>
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"># Маршрут</th>
+                    <th scope="col">Откуда</th>
+                    <th scope="col">Куда</th>
+                    <th scope="col">Время в пути</th>
+                    <th scope="col">Удалять</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                    <tr> 
+                        <td>
+                            <a href="{% url 'detail' pk=object.pk%}"> 
+                                {{object.name}} 
+                            </a>
+                        </td>
+                        <td>
+                            {{object.from_city}} 
+                        </td>
+                        <td>
+                            {{object.to_city}} 
+                        </td>
+                        <td>
+                            {{object.travel_times}} 
+                        </td>            
+                        <td>
+                            <a href="{% url 'delete' pk=object.pk %}"> 
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    Удалить 
+                                </button>                                
+                            </a>
+                        </td>            
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
