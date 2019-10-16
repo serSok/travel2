@@ -31,7 +31,7 @@ SECRET_KEY = 'jra84n&80%g3c&!f60ogoxsd)76t)%5wmjfai3n9-ol49ie9&@'
 DEBUG = True
 #DEBUG = False
 
-ALLOWED_HOSTS = ['travel-les2.herokuapp.com']
+ALLOWED_HOSTS = ['travel-les3.herokuapp.com']
 
 
 # Application definition
