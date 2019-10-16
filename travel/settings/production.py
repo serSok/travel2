@@ -26,7 +26,7 @@ SECRET_KEY = '&dr$z@fgz1yt+29tj#1j+%n!37gfe8-dpsu2%po@6$femtqe^n'
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['travel-les2.herokuapp.com']
 
